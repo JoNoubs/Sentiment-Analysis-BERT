@@ -285,25 +285,6 @@ This project was developed as part of an MLOps project, simulating a professiona
 If you’d like to explore the project further, check out the Kaggle notebook where the dataset was sourced and additional sentiment analysis work was done: [Sentiment Analysis using BERT on Kaggle](https://www.kaggle.com/code/prakharrathi25/sentiment-analysis-using-bert). The notebook provides insights into the dataset and alternative approaches to sentiment analysis using BERT.
 
 
-
-## Contributors
-
-- **Student A: Johanna (JoNoubs)**  
-  - Responsibilities: Data extraction, text cleaning, web app interface, documentation lead.
-  - GitHub: [JoNoubs](https://github.com/JoNoubs)
-
-- **Student B: Armel (m-armel)**  
-  - Responsibilities: Tokenization, data splitting, model training, inference, automation scripts.
-  - GitHub: [m-armel](https://github.com/m-armel)
-
-
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details (if applicable).
-
-
-
 ## Acknowledgments
 
 - Thanks to Kaggle for providing the Google Play Store Reviews dataset.
