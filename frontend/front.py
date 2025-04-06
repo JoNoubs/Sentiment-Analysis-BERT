@@ -1,32 +1,19 @@
-# Purpose: Create an enhanced web interface for sentiment analysis using Streamlit
-
 import streamlit as st
-from src.inference import predict
+import requests
 
-# App configuration
-st.set_page_config(page_title="BERT Sentiment Analyzer", layout="centered")
-
-# Title and subtitle
-st.title("🧠 Sentiment Analysis with BERT")
-st.subheader("Analyze the sentiment of a sentence using a fine-tuned BERT model")
-
-# Text input
-text = st.text_area("✍️ Enter your text below:", height=150, placeholder="Type a review, tweet, or comment...")
-
-# Predict button
-if st.button("🔍 Analyze Sentiment"):
-    if text.strip():
+st.title("Sentiment Analysis with BERT")
+text = st.text_input("Enter Text")
+if st.button("Predict"):
+    if text:
         try:
-            result = predict(text)
-            label_map = {0: "😠 Negative", 1: "😐 Neutral", 2: "😊 Positive"}
-            st.success(f"**Sentiment:** {label_map.get(result, 'Unknown')}")
-
+            response = requests.post("http://backend:5000/predict", json={"text": text})
+            result = response.json()
+            if 'sentiment' in result:
+                label_map = {0: "😞", 1: "😐", 2: "😊"}
+                st.write(f"Sentiment: {result['sentiment']} {label_map[int(result['sentiment'][-1])]}")
+            else:
+                st.write(f"Error: {result.get('error', 'Unknown error')}")
         except Exception as e:
-            st.error(f"An error occurred during prediction: {e}")
-
+            st.write(f"Error: {str(e)}")
     else:
-        st.warning("Please enter some text to analyze.")
-
-# Footer
-st.markdown("---")
-st.markdown("Made with ❤️ by **Johanna** and **Armel** | Powered by 🤗 HuggingFace BERT")
+        st.write("Please enter some text!")
