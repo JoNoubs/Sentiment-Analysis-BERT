@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 # Collaborative Sentiment Analysis Pipeline using BERT
 
 ## Project Overview
