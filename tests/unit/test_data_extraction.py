@@ -1,4 +1,3 @@
-# tests/unit/test_data_extraction.py
 # Purpose: Test the data extraction functionality
 import sys
 import os

@@ -1,4 +1,3 @@
-# tests/unit/test_model.py
 # Purpose: Test the model training functionality
 import sys
 import os

@@ -1,4 +1,3 @@
-# app.py
 # Purpose: Create an enhanced web interface for sentiment analysis using Streamlit
 
 import streamlit as st

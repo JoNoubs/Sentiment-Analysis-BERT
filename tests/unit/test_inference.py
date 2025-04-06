@@ -1,4 +1,3 @@
-# tests/unit/test_inference.py
 # Purpose: Test the inference functionality
 import sys
 import os

@@ -1,4 +1,3 @@
-# src/inference.py
 # Purpose: Predict sentiment using the trained model
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification

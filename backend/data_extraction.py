@@ -1,4 +1,3 @@
-# src/data_extraction.py
 # Purpose: Load and preprocess the sentiment dataset from a CSV file
 import pandas as pd
 import os
