@@ -2,7 +2,7 @@
 import pandas as pd
 from transformers import AutoTokenizer
 from sklearn.model_selection import train_test_split
-from src.data_extraction import load_data
+from .data_extraction import load_data
 
 def clean_text(text):
     # Convert to lowercase and remove non-alphanumeric characters except spaces

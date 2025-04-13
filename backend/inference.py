@@ -1,28 +1,24 @@
-# Purpose: Predict sentiment using the trained model
+from transformers import AutoTokenizer
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from backend.model import load_trained_model
 
-def predict(text, model_path="./models"):
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = load_trained_model()
+
+def predict(text):
     try:
-        # Load tokenizer and model
-        tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-        model = AutoModelForSequenceClassification.from_pretrained(model_path)
-        # Tokenize input
-        inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128)
+        # Tokenize the input text
+        inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=128)
+        input_ids = inputs['input_ids']
+        attention_mask = inputs['attention_mask']
+
         # Perform inference
         with torch.no_grad():
-            outputs = model(**inputs)
-        # Return the predicted label (0: negative, 1: neutral, 2: positive)
-        return outputs.logits.argmax().item()
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            logits = outputs.logits
+            prediction = torch.argmax(logits, dim=1).item()
+
+        return prediction
     except Exception as e:
         print(f"Error during inference: {e}")
         raise
-
-if __name__ == "__main__":
-    try:
-        sample_text = "This movie is amazing!"
-        result = predict(sample_text)
-        label_map = {0: "Negative", 1: "Neutral", 2: "Positive"}
-        print(f"Sentiment for '{sample_text}': {label_map[result]}")
-    except Exception as e:
-        print(f"Failed to perform inference: {e}")

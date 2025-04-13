@@ -2,8 +2,9 @@
 import pandas as pd
 import os
 
-def load_data(path="/Users/johannafokui/Downloads/dataset.csv"):
-    # Check if the file exists
+def load_data():
+    # Use a relative path to the dataset
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "dataset.csv")
     if not os.path.exists(path):
         raise FileNotFoundError(f"{path} does not exist")
     # Load the CSV and preprocess
