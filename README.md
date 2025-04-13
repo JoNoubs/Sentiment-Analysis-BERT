@@ -300,9 +300,9 @@ This is the simplest way to run the project, as it handles all dependencies and 
    - Open your browser and go to `http://localhost:8501` to interact with the Streamlit app.
    - Enter a text (e.g., “This movie is great!”) and click “Analyze” to see the sentiment prediction.
    - **Screenshots**:
-     - Positive Prediction: `screenshots/streamlit_positive.png` shows the Streamlit app predicting "Positive".
-     - Neutral Prediction: `screenshots/streamlit_neutral.png` shows the Streamlit app predicting "Neutral".
-     - Negative Prediction: `screenshots/streamlit_negative.png` shows the Streamlit app predicting "Negative".
+     - Positive Prediction: ![Positive](screenshots/streamlit_positive.png) shows the Streamlit app predicting "Positive".
+     - Neutral Prediction: ![Neutral](screenshots/streamlit_neutral.png) shows the Streamlit app predicting "Neutral".
+     - Negative Prediction: ![Negative](screenshots/streamlit_negative.png) shows the Streamlit app predicting "Negative".
 
 3. **Stop the Containers**:
    - In the terminal where `docker-compose up` is running, press `Ctrl+C` to stop the containers.
@@ -381,7 +381,7 @@ This project was developed as part of an MLOps course, simulating a professional
 - **frontend/Dockerfile**: Builds the frontend container, running the Streamlit app (`front.py`) on port 8501.
 - **backend/Dockerfile**: Builds the backend container, running the Flask API (`api.py`) on port 5000, with a volume for `models/` to persist the pre-trained model.
 - **docker-compose.yml**: Defines `frontend` and `backend` services, connected via a `sentiment-network` bridge for communication.
-  - **Backend Logs Screenshot**: `screenshots/terminal_training_inference.png` shows the terminal output of the backend container starting up, loading the pre-trained model, and running the Flask API.
+  - **Backend Logs Screenshot**: ![Training & Inference Logs](screenshots/terminal_training_inference.png) shows the terminal output of the backend container starting up, loading the pre-trained model, and running the Flask API.
 
 ### GitHub Actions
 - **test.yml**: Lints the code with `flake8` and runs unit tests using `pytest` on pushes and pull requests to the `main` branch.
