@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install 'accelerate>=0.26.0' tf-keras flask huggingface_hub[hf_xet]
+RUN pip install 'accelerate>=0.26.0' tf-keras flask
 
 COPY backend/ ./backend/
 COPY data/ ./data/

@@ -2,11 +2,11 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install streamlit requests
+COPY ./requirements.txt .
 
-COPY frontend/ .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./frontend/ .
 
 EXPOSE 8501
 
