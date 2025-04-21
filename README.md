@@ -14,7 +14,7 @@ The dataset used in this project is sourced from Kaggle: **Google Play Store Rev
 - **Last Updated**: 4 years ago (Version 1)
 - **Usage in Project**: The dataset is stored in the `data/` directory as `dataset.csv`. To use this dataset, download it from the Kaggle link above and place it in the `data/` directory of the project. Alternatively, you can create a temporary `dataset.csv` file with the required columns (`content` for review text and `score` for rating) for testing purposes.
 
-## 🔹 Project Structure
+## Project Structure
 
 The project is organized to reflect a professional MLOps workflow, with clear separation of concerns between source code, tests, automation scripts, containers, and CI/CD workflows. Below is the structure of the repository:
 
@@ -65,7 +65,7 @@ Sentiment-Analysis-BERT/
 └── .gitignore                 # Git ignore file for excluding unnecessary files
 ```
 
-## ⚙️ Setup
+## Setup
 
 Follow these steps to set up the project on your local machine. Instructions are provided for both Unix-based systems (Linux, macOS) and Windows. The recommended way to run the project is using Docker Compose, but manual setup instructions are also provided for development or debugging purposes.
 
